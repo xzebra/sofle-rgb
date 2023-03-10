@@ -13,11 +13,16 @@
 &left_encoder { resolution = <2>; };
 &right_encoder { resolution = <2>; };
 
+#define COLEMAK  0
+#define QWERTY  1
+#define LOWER   2
+#define RAISE   3
+
 / {
     keymap {
         compatible = "zmk,keymap";
 
-        default_layer {
+        colemak_layer {
 // ------------------------------------------------------------------------------------------------------------
 // |  `    |  1  |  2  |  3   |  4   |  5   |                   |  6   |  7    |  8    |  9   |   0   |   \   |
 // |  TAB  |  Q  |  W  |  F   |  P   |  B   |                   |  J   |  L    |  U    |  Y   |   ;   | BKSPC |
@@ -29,7 +34,25 @@
 &kp TAB        &kp Q  &kp W     &kp F     &kp P          &kp B                            &kp J   &kp L          &kp U     &kp Y    &kp SEMI    &kp BSPC
 &kp LSHFT      &kp A  &kp R     &kp S     &kp T          &kp G                            &kp M   &kp N          &kp E     &kp I    &kp O &mt SQT RSHFT 
 &kp LCTRL      &kp Z  &kp X     &kp C     &kp D          &kp V     &kp C_MUTE  &kp C_PP   &kp K   &kp H          &kp COMMA &kp DOT  &kp FSLH &kp RCTRL
-               &mt GRAVE CLCK   &lt 1 LBKT  &mt LGUI MINUS &kp LALT &kp SPACE  &kp RET    &kp RALT &mt RGUI EQUAL &lt 2 RBKT &kp RCTRL
+               &mt GRAVE CLCK   &lt LOWER LBKT  &mt LGUI MINUS &kp LALT &kp SPACE  &kp RET    &kp RALT &mt RGUI EQUAL &lt RAISE RBKT &tog QWERTY
+            >;
+
+            sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp PG_DN PG_UP>;
+        };
+
+        qwerty_layer {
+// ------------------------------------------------------------------------------------------------------------
+// |  `    |  1  |  2  |  3   |  4   |  5   |                   |  6   |  7    |  8    |  9   |   0   |   \   |
+// |  TAB  |  Q  |  W  |  E   |  R   |  T   |                   |  Y   |  U    |  I    |  O   |   P   | BKSPC |
+// | C/ESC |  A  |  S  |  D   |  F   |  G   |                   |  H   |  J    |  K    |  L   |   ;   |  C/'  |
+// | SHIFT |  Z  |  X  |  C   |   V  |  B   |  MUTE  |  | PLAY  |  N   |  M    |  ,    |  .   |   /   | SHIFT |
+//               | CAPS| ALT  | GUI/-| SPACE|LOWER/[ |  |RAISE/]| ENTER|  GUI/=|  ALT  | CTRL |
+            bindings = <
+&trans        &trans &trans    &trans    &trans         &trans                           &trans  &trans         &trans    &trans   &trans   &trans
+&trans        &kp Q  &kp W     &kp E     &kp R          &kp T                            &kp Y   &kp U          &kp I     &kp O    &kp P    &trans
+&trans      &kp A  &kp S     &kp D     &kp F          &kp G                            &kp H   &kp J          &kp K     &kp L    &kp SEMI &trans
+&trans      &kp Z  &kp X     &kp C     &kp V          &kp B     &trans  &trans   &kp N   &kp M          &trans &trans  &trans &trans
+               &trans   &trans  &trans &trans &trans  &trans    &trans &trans &trans &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp PG_DN PG_UP>;
