@@ -47,11 +47,11 @@
             //               | CAPS| ALT  | GUI/-| SPACE|LOWER/[ |  |RAISE/]| ENTER|  GUI/=|  ALT  | CTRL |
 
             bindings = <
-&kp ESC         &kp N1                             &kp N2                         &kp N3                     &kp N4                           &kp N5                               &kp N6  &kp N7                            &kp N8                         &kp N9                           &kp N0                                 &kp BSLH
-&kp TAB         &kp Q                              &kp W                          &kp E                      &kp R                            &kp T                                &kp Y   &kp U                             &kp I                          &kp O                            &kp P                                  &kp BSPC
-&lt 1 CAPSLOCK  &kp A                              &kp S                          &kp D                      &kp F                            &kp G                                &kp H   &kp J                             &kp K                          &kp L                            &kp RET                                &kp SQT
-&kp LCTRL       &hold_tap_modifier LEFT_CONTROL Z  &hold_tap_modifier LEFT_ALT X  &hold_tap_modifier LCMD C  &hold_tap_modifier LEFT_SHIFT V  &kp B      &to 3      &kp M          &kp N   &hold_tap_modifier RIGHT_SHIFT M  &hold_tap_modifier LCMD COMMA  &hold_tap_modifier LEFT_ALT DOT  &hold_tap_modifier LEFT_CONTROL SLASH  &kp RCTRL
-                                                   &kt CAPSLOCK                   &lt 1 LBKT                 &mt LGUI MINUS                   &kp SPACE  &kp TAB    &kp BACKSPACE  &to 1   &kp ESC                           &lt 2 RBKT                     &tog 0
+&kp ESC         &kp N1                             &kp N2                         &kp N3                     &kp N4                           &kp N5                       &kp N6         &kp N7                            &kp N8                         &kp N9                           &kp N0                                 &kp BSLH
+&kp TAB         &kp Q                              &kp W                          &kp E                      &kp R                            &kp T                        &kp Y          &kp U                             &kp I                          &kp O                            &kp P                                  &kp BSPC
+&lt 1 CAPSLOCK  &kp A                              &kp S                          &kp D                      &kp F                            &kp G                        &kp H          &kp J                             &kp K                          &kp L                            &kp RET                                &kp SQT
+&kp LCTRL       &hold_tap_modifier LEFT_CONTROL Z  &hold_tap_modifier LEFT_ALT X  &hold_tap_modifier LCMD C  &hold_tap_modifier LEFT_SHIFT V  &kp B      &to 3      &to 4  &kp N          &hold_tap_modifier RIGHT_SHIFT M  &hold_tap_modifier LCMD COMMA  &hold_tap_modifier LEFT_ALT DOT  &hold_tap_modifier LEFT_CONTROL SLASH  &kp RCTRL
+                                                   &kt CAPSLOCK                   &lt 1 LBKT                 &mt LGUI MINUS                   &kp SPACE  &kp TAB    &to 1  &kp BACKSPACE  &kp ESC                           &lt 2 RBKT                     &tog 0
             >;
 
             sensor-bindings =
@@ -105,8 +105,8 @@
 &trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
-                &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans    &to 0   &trans  &trans  &trans  &trans  &trans  &trans
+                &trans  &trans  &trans  &trans  &to 0     &trans  &trans  &trans  &trans  &trans
             >;
 
             sensor-bindings =
